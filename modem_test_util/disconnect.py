@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Disconnect HID device from computer
 import serial
 import time
 

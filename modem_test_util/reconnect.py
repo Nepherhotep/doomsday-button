@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Try to reconnect HID modem to last computer
 import serial
 import time
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Emulate keypress on the connected host computer
 import serial
 import time
 
