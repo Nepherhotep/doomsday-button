@@ -29,6 +29,7 @@ def main():
         
     print 'shoot'
     serial_key_press(ser)
+    time.sleep(1)
     ser.close()
 
 
