@@ -25,6 +25,7 @@ def serial_key_press():
 
 
 def main():
+    #make a short delay before shooting a keypress
     for i in range(3, 0, -1):
         print i
         time.sleep(1)
