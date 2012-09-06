@@ -9,12 +9,12 @@ def reconnect():
     ser = serial.Serial()
     ser.baudrate = 9600
     ser.port = "/dev/tty.usbserial-AH019ML6"
+    ser.timeout = 5
     ser.open()
 
     #send disconnect command
     ser.write('$$$')
     print "Requesting command mode"
-    time.sleep(1)
     if ser.read(3) == "CMD":
         print "Command mode enabled"
 

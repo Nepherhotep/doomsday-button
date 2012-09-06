@@ -13,8 +13,9 @@ def disconnect():
 
     #send disconnect command
     ser.write('\x00')
-
-    #close serial
+    
+    #wait close serial
+    time.sleep(1)
     ser.close()
 
 
