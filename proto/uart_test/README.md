@@ -1,0 +1,1 @@
+fuse calculator: http://www.frank-zhao.com/fusecalc/fusecalc.php?chip=attiny2313
