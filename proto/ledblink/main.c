@@ -27,9 +27,9 @@ int main(void) {
   // initialize the direction of PORTD #6 to be an output
   set_output(DDRB, LED);  
   while(1){
-    delay_ms(80);
+    delay_ms(200);
     output_high(PORTB, LED); 
-    delay_ms(80);
+    delay_ms(200);
     output_low(PORTB, LED);
   }
 }
