@@ -23,13 +23,39 @@
 #define USART_BAUDRATE 9600   
 #define BAUD_PRESCALE (((F_CPU / (USART_BAUDRATE * 16UL))) - 1)
 
+void led_blink(){
+  //start blink
+  output_high(DDRB, LED);
+
+  //press button
+  USART_SendByte(0xFE);
+  USART_SendByte(0x02);
+  USART_SendByte(0x02);
+  USART_SendByte(0x43);
+  
+  //release button
+  USART_SendByte(0xFE);
+  USART_SendByte(0x00);
+  
+  //delay blink
+  _delay_ms(100);
+
+  //stop blink
+  output_low(DDRB, LED);
+}
+
+//Interrupt Service Routine for INT0
+ISR(INT0_vect)
+{
+  led_blink();
+  }
+
 void USART_Init(void){
    // Set baud rate
   UBRRL = BAUD_PRESCALE;
   UBRRH = (BAUD_PRESCALE >> 8); 
   UCSRB = ((1<<TXEN)|(1<<RXEN) | (1<<RXCIE));
 }
-
 
 void USART_SendByte(uint8_t u8Data){
   while((UCSRA &(1<<UDRE)) == 0);
@@ -42,20 +68,15 @@ uint8_t USART_ReceiveByte(){
 }
 
 int main(void){
-   USART_Init();  // Initialise USART
-   sei();         // enable all interrupts
+   USART_Init();// Initialise USART
+
+   // interrupt on INT0 pin falling edge (sensor triggered) 
+   MCUCR = (1<<ISC01) | (0<<ISC00);
+   // turn on interrupts!
+   GIMSK |= (1<<INT0);
+   sei();// enable all interrupts
    set_output(DDRB, LED);
    output_low(DDRB, LED);
-   for(;;){    // Repeat indefinitely
-     _delay_ms(1000);
-     USART_SendByte('H');
-     USART_SendByte('e');
-     USART_SendByte('l');
-     USART_SendByte('l');
-     USART_SendByte('o');
-     USART_SendByte(13);
-     output_high(DDRB, LED);
-     _delay_ms(200);
-     output_low(DDRB, LED);
-   }
+   
+   while(1);
 }
