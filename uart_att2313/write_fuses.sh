@@ -1,0 +1,1 @@
+avrdude -P usb -c usbtiny -p attiny2313 -qq -U lfuse:w:fuse_low.tmp:i
