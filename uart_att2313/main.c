@@ -23,7 +23,7 @@
 #define USART_BAUDRATE 9600   
 #define BAUD_PRESCALE (((F_CPU / (USART_BAUDRATE * 16UL))) - 1)
 
-void led_blink(){
+void fire_keypress(){
   //start blink
   output_high(DDRB, LED);
 
@@ -47,7 +47,7 @@ void led_blink(){
 //Interrupt Service Routine for INT0
 ISR(INT0_vect)
 {
-  led_blink();
+  fire_keypress();
   }
 
 void USART_Init(void){
