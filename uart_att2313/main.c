@@ -10,6 +10,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/sleep.h>
 #include <avr/interrupt.h>
 
 #define LED PB0
@@ -42,6 +43,8 @@ void fire_keypress(){
 
   //stop blink
   output_low(DDRB, LED);
+
+  _delay_ms(500);
 }
 
 //Interrupt Service Routine for INT0
@@ -71,12 +74,21 @@ int main(void){
    USART_Init();// Initialise USART
 
    // interrupt on INT0 pin falling edge (sensor triggered) 
-   MCUCR = (1<<ISC01) | (0<<ISC00);
+   //MCUCR = (1<<ISC01) | (0<<ISC00);
+
+   // interrupt on low level
+   MCUCR = (0<<ISC01) | (0<<ISC00);
+
    // turn on interrupts!
    GIMSK |= (1<<INT0);
    sei();// enable all interrupts
    set_output(DDRB, LED);
    output_low(DDRB, LED);
-   
-   while(1);
+
+   //enable sleep
+   set_sleep_mode(SLEEP_MODE_PWR_DOWN); 
+   while(1) {
+     sleep_enable();
+     sleep_cpu();
+   }
 }
