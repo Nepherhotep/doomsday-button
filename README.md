@@ -1,11 +1,10 @@
 Overview
 ===============
 
-Doomsday button is a bluetooth HID keyboard button. I'll use it as a hardware hotkey to build projects in XCode and Idea.
-Button will be connected to my laptop via bluetooth and when it is pressed, it will fire shift-F10 (or CMD-R) key combination.
+First of all what is a project about? Doomsday Button actually is a wireless keyboard with only one button. Pressing this button hits special hotkey, in my case it is SHIFT-F10, I use it to run "Make project" command in Idea IDE and XCode.
 
-The button itself is a big one designed for factory equipments. Here is a photo.
-![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/button.jpg)
+Here is a photo of the resulting device:
+![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/assemled_button.jpg)
 
-The electronic scheme is based on Bluesmirf bluetooth HID modem.
-![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/sparkfun_hid_modem.jpg)
+Whatch on Youtube how it works:
+http://www.youtube.com/watch?v=JafRsrstjKw
