@@ -1,5 +1,4 @@
-Overview
-===============
+## Overview ##
 
 First of all, what is a project about? Doomsday Button actually is a wireless keyboard with only one button.
 Pressing this button hits a special hotkey, in my case it is SHIFT-F10, I use it to run "Make project" command in Idea IDE and XCode.
@@ -15,8 +14,7 @@ Why I decided to build it?
 Once I found it quite inconvenient to press Fn+SHIFT+F10 every time I want to build project.
 So I had an idea to assemble a big red button and use it as a hotkey.
 
-Parts
-===============
+## Parts ##
 
 After a short research, I decided that my button would be connected via bluetooth as a HID device.
 For that purposes I ordered Bluesmirf HID Modem https://www.sparkfun.com/products/10938 
@@ -36,14 +34,12 @@ Here is a whole listing of necessary parts:
 * Break away male headers, right angle and break away female headers. 
 * ISP socket
 
-Bluesmirf HID modem
-===============
+## Bluesmirf HID modem ##
 
 Before we start using it the modem in scheme we need to configure it.
 
 
-Wiring
-----------
+### Wiring ###
 
 First we need to connect modem to computer using FTDI cable and setup some parameters. 
 If you don't have FTDI cable, you can use serial port (or usb-to-serial) with special TTL level converter.
@@ -66,14 +62,12 @@ RTS-0 ----+
 CTS-1 ----+
 ```
 
-Connecting
-----------
+### Connecting ###
 
 Launch CoolTerm app, or your favorite terminal application and connect to modem.
 Terminal application options - no flow control, baudrate 115200, local echo (optional), CR on "Enter".
 
-Tweaking
----------
+### Tweaking ###
 
 Then type in ```$$$``` and modem should response ```CMD``` - it means your are in command mode.
 
@@ -87,8 +81,7 @@ Now you can change your modem's parameters. All the commands has to be followed 
 
 Type in ```---``` command to quit command mode.
 
-Testing
-----------
+### Testing ###
 
 When you switched to HID profile, try to find a new bluetooth device. After you find it and pair, the modem will connect automatically.
 When modem is connected as a keyboard, any command to UART will be transformed into appropriate keypress.
