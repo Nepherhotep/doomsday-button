@@ -29,7 +29,7 @@ Here is a whole listing of necessary parts:
 * ISP AVR programmer. Any will do, as for me I used this one https://www.sparkfun.com/products/9825 
 * FTDI TTL cable. Also any will be ok. I used https://www.sparkfun.com/products/9717 . This cable will be very handful to setup modem and to debug ATTiny2313.
 * Resistors - 10 kOm (x2 items), 200 Om (x1 item)
-* Capasity - 0.1 mF (x1 item)
+* Capacitor - 0.1 mF (x1 item)
 * One led
 * Break away male headers, right angle and break away female headers. 
 * ISP socket
