@@ -29,7 +29,7 @@ Here is a whole listing of necessary parts:
 * ISP AVR programmer. Any will do, as for me I used this one https://www.sparkfun.com/products/9825 
 * FTDI TTL cable. Also any will be ok. I used https://www.sparkfun.com/products/9717 . This cable will be very handful to setup modem and to debug ATTiny2313.
 * Resistors - 10 kOm (x2 items), 200 Om (x1 item)
-* Capacitor - 0.1 mF (x1 item)
+* Capacitor - 0.1 µF (x1 item)
 * One led
 * Break away male headers, right angle and break away female headers. 
 * ISP socket
@@ -93,6 +93,19 @@ You only need to change TTY to your one. Line 23 -> ```ser.port = "/dev/tty.usbs
 
 ## Control Module ##
 
-Control module is based on ATTiny2313 controller. It controlls HID modem with UART port. Scheme is very easy. Below its picture scrached on paper. Sorry for quallity - it was finished in time of assembling :)
+Control module is based on ATTiny2313 controller. It controlls HID modem with UART port. Scheme is very easy.
+Below its picture scrached on paper. Sorry for quallity - it was created in time of assembling :)
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/scheme.jpg)
 
+Attention - the scheme is mirrored.
+
+Pin names look in datasheet http://www.atmel.com/Images/doc2543.pdf .
+
+Scheme description:
+*  VCC, GND, RX, TX connect to UART port
+*  MOSI, MISO, GND, VCC, SCK, RST pins connect to appropriate ISP pins. RST connect through 10 kOm resistor to VCC
+*  Connect led to pin 12 (PB0), another led pin connect through 200 Om resistor to VCC.
+*  Connect switcher to pin 6 (INT0) and to GND. The capacitor is required to remove micro "tinkling".
+*  Connect 10 kOm resistor to pin 6 and VCC.
+
+After ISP and led are connected, the scheme can be tested with led blinking firmware.
