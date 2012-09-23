@@ -85,3 +85,14 @@ Type in ```---``` command to quit command mode.
 
 When you switched to HID profile, try to find a new bluetooth device. After you find it and pair, the modem will connect automatically.
 When modem is connected as a keyboard, any command to UART will be transformed into appropriate keypress.
+
+You can test key combination in real using special script I wrote in Python.
+https://github.com/Nepherhotep/doomsday-button/blob/master/proto/modem_test_util/key_presses.py
+It makes a short delay before hitting a keypress into UART.
+You only need to change TTY to your one. Line 23 -> ```ser.port = "/dev/tty.usbserial-AH019ML6"```.
+
+## Control Module ##
+
+Control module is based on ATTiny2313 controller. It controlls HID modem with UART port. Scheme is very easy. Below its picture scrached on paper. Sorry for quallity - it was finished in time of assembling :)
+![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/scheme.jpg)
+
