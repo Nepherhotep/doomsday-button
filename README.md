@@ -108,4 +108,34 @@ Scheme description:
 *  Connect switcher to pin 6 (INT0) and to GND. The capacitor is required to remove micro "tinkling".
 *  Connect 10 kOm resistor to pin 6 and VCC.
 
-After ISP and led are connected, the scheme can be tested with led blinking firmware.
+### Ledblink testing ###
+
+After ISP and led are connected, the scheme can be tested with led blinking firmware. Look it here doomsday-button/proto/ledblink.
+
+You need to install programmer drivers and avrdude. For Mac OS X just install CrossPack http://www.obdev.at/products/crosspack/index.html
+
+Run ```make flash``` to build firmware and to upload it to controller. Probably, you'll need to change line ```PROGRAMMER = -c usbtiny -P usb``` to your programmer version.
+
+
+### UART testing ###
+
+UART schematic:
+```
+VCC -- VCC
+GND -- GND
+RX -- TX
+TX -- RX
+```
+
+* Connect FTDI cable to scheme UART port
+* Go to uart_att2313 directory
+* Run ./write_fuses.sh script to setup fuses correctly
+* Run ```make flash``` to build and upload firmware to controller
+* Open your terminal programm
+
+Now when you press switcher, the led will blink and "FE 02 02 42 FE 00" hex combination will send to terminal.
+If it works as expected, you can assemble parts all together.
+
+## Assembling ##
+
+Since we used break away header it will easy.
