@@ -155,7 +155,7 @@ TX -- RX
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/assembling.jpg)
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/assembling2.jpg)
 
-The last thing - to put everything inside the box. And that's it, the button is ready!
+The last thing - put everything inside the box. And that's it, the button is ready!
 
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/result.jpg)
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/result2.JPG)
