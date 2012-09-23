@@ -93,7 +93,7 @@ You only need to change TTY to your one. Line 23 -> ```ser.port = "/dev/tty.usbs
 
 ## Control Module ##
 
-Control module is based on ATTiny2313 controller. It controlls HID modem with UART port. Scheme is very easy.
+Control module is based on ATTiny2313 controller. It controls HID modem with UART port. Scheme is very easy.
 Below its picture scrached on paper. Sorry for quallity - it was created in time of assembling :)
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/scheme.jpg)
 
@@ -138,4 +138,26 @@ If it works as expected, you can assemble parts all together.
 
 ## Assembling ##
 
-Since we used break away header it will easy.
+Since we used break away header it will be easy.
+
+* Connect modem's UART port to control module UART
+
+```
+VCC -- VCC
+GND -- GND
+RX -- TX
+TX -- RX
+```
+* Connect switcher to control module
+* Connect on/off switcher to control module
+* Connect battery supply
+
+![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/assembling.jpg)
+![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/assembling2.jpg)
+
+The last thing - to put everything inside the box. And that's it, the button is ready!
+
+![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/result.jpg)
+![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/result2.JPG)
+
+Thanks you read to the end :)
