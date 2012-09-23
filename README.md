@@ -7,7 +7,7 @@ Here is a photo of the resulting device:
 
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/result.jpg)
 
-Whatch on Youtube how it looks like:
+Whatch on Youtube how it works:
 http://www.youtube.com/watch?v=JafRsrstjKw
 
 Why I decided to build it?
