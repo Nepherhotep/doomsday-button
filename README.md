@@ -143,10 +143,19 @@ Since we used break away header it will be easy.
 * Connect modem's UART port to control module UART
 
 ```
-VCC -- VCC
-GND -- GND
-RX -- TX
-TX -- RX
+Modem Pins       Control Module Pins
+
+VCC ------------ VCC
+
+GND ------------ GND
+
+TX-0 ----------- RX
+
+RX-1------------ TX
+
+RTS-0 ----+
+          |
+CTS-1 ----+
 ```
 * Connect switcher to control module
 * Connect on/off switcher to control module
