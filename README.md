@@ -19,7 +19,7 @@ So I had an idea to assemble a big red button and use it as a hotkey.
 After a short research, I decided that my button would be connected via bluetooth as a HID device.
 For that purposes I ordered Bluesmirf HID Modem https://www.sparkfun.com/products/10938 
 
-Actually it is a main part of the button since it already can works as a bluetooth HID device.
+Actually it is a main part of the button since it already can work as a bluetooth HID device.
 The modem is controlled with UART port. We also need ATTiny2313 controller as a "brain" of scheme.
 
 Here is a whole listing of necessary parts:
