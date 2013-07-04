@@ -36,7 +36,7 @@ Here is a whole listing of necessary parts:
 
 ## Bluesmirf HID modem ##
 
-Before we start using it the modem in scheme we need to configure it.
+Before we start using the modem in scheme we need to configure it.
 
 
 ### Wiring ###
