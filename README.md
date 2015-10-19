@@ -1,17 +1,17 @@
 ## Overview ##
 
-First of all, what is a project about? Doomsday Button actually is a wireless keyboard with only one button.
+First of all, what is the project about? Doomsday Button actually is a wireless keyboard with only one button.
 Pressing this button hits a special hotkey, in my case it is SHIFT-F10, I use it to run "Make project" command in Idea IDE and XCode.
 
 Here is a photo of the resulting device:
 
 ![Image Alt](https://raw.github.com/Nepherhotep/doomsday-button/master/img/result.jpg)
 
-Whatch on Youtube how it works:
+Watch on Youtube how it works:
 http://www.youtube.com/watch?v=JafRsrstjKw
 
 Why I decided to build it?
-Once I found it quite inconvenient to press Fn+SHIFT+F10 every time I want to build project.
+Once I found it quite inconvenient to press Fn+SHIFT+F10 every time I want to build projects.
 So I had an idea to assemble a big red button and use it as a hotkey.
 
 ## Parts ##
@@ -22,7 +22,7 @@ For that purposes I ordered Bluesmirf HID Modem https://www.sparkfun.com/product
 Actually it is a main part of the button since it already can work as a bluetooth HID device.
 The modem is controlled with UART port. We also need ATTiny2313 controller as a "brain" of scheme.
 
-Here is a whole listing of necessary parts:
+Here is the full listing of necessary parts:
 * Bluesmirf HID modem
 * ATTiny2313 controller 
 * Board 11х16 holes
